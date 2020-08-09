@@ -1,8 +1,8 @@
-# Projeto 3: Analisador de ativo financeiro
+# Projeto 2: Analisador financeiro
 
-O projeto 3 tem por objetivo desenvolver um programa que analise ativos financeiros da [Bolsa de Valores de São Paulo](http://www.b3.com.br/pt_br/), para identificar os ativos com melhor razão entre retorno e risco. Mais especificamente, o programa deve ser capaz de apresentar:
+O projeto 2 tem por objetivo desenvolver um programa que analise ativos financeiros da [Bolsa de Valores de São Paulo](http://www.b3.com.br/pt_br/), para identificar os ativos com melhor razão entre retorno e risco. Mais especificamente, o programa deve ser capaz de apresentar:
 * Os N ativos com maior retorno financeiro em um determinado período
-* Os N ativos com menor volatilidade em um determinado período
+* A rentabilidade de uma carteira de investimentos composta por um conjunto de ativos
 
 A análise deve ser feita com base no [arquivo de dados disponibilizado](http://tele.sj.ifsc.edu.br/~msobral/prg2/2018-2/dados.zip). Esse arquivo de dados possui cotações de ativos entre janeiro de 2007 e setembro de 2018, e suas possuem linhas este formato:
 
@@ -20,7 +20,8 @@ Ex:
 Seu programa deve receber do usuário estas informações:
 * Período de análise, na forma de um mês  e ano inicial, e mês e ano final (ex: 01/2018 a 08/2018)
 * O tipo de análise a ser realizada
-* A quantidade de ativos cujos resultados devem ser apresentados (parâmetro N)
+* A quantidade de ativos cujos resultados devem ser apresentados (parâmetro N), quando pertinente para a análise
+* Os nomes dos ativos que compõem a carteira cuja rentabilidade deve ser calculada, quando pertinente para a análise
 
 Seu programa deve obrigatoriamente usar tabela hash para extrair e organizar os dados durante a análise. Mas você deve perceber que sem a tabela hash a tarefa ficaria mais complicada ...
 
@@ -35,34 +36,6 @@ O retorno financeiro é definido como a porcentagem que expressa o aumento no va
 Y = (Vf - Vi) / Vi x 100%
 
 ... sendo Y o retorno financeiro, Vf o valor no final do período analisado e Vi o valor no início desse período.
-
-## Volatilidade
-
-A volatilidade é calculada como o [desvio padrão](https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o) das rentabilidades em um determinado período. A rentabilidade é dada pelo retorno financeiro em intervalos definidos (ex: diária, semanal, mensal, anual, ...). Por exemplo, seja a rentabilidade mensal de um certo ativo no ano de 2017:
-
-```
-Mês 	Rentabilidade (em %)
-Jan 	0.42
-Fev 	0.40
-Mar 	0.53
-Abr 	0.47
-Mai 	0.55
-Jun 	0.51
-Jul 	0.32
-Ago 	0.53
-Set 	0.60
-Out 	0.41
-Nov 	0.59
-Dez 	0.48
-```
-
-O [desvio padrão](https://moodle.sj.ifsc.edu.br/mod/vpl/view.php?id=5604) dessas rentabilidades é calculado usando a fórmula para [desvio padrão populacional](https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o#Desvio_padr%C3%A3o_populacional), dada por:
-
-s=![desvio](pics/desvio.png)
-
-... sendo xi um valor do conjunto, a média dos valores desse conjunto, e n o tamanho do conjunto. Para o exemplo, a média é 0.484, e o [desvio padrão](https://moodle.sj.ifsc.edu.br/mod/vpl/view.php?id=5604):
-
-s = 0.08
 
 
 ## Referências
